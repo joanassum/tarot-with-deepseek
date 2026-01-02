@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarot Card Reader</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔮</text></svg>">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-crystal-ball"></i> Mystic Tarot Reader</h1>
+            <p class="subtitle">Ask a question, draw cards, and receive guidance from the universe</p>
+        </header>
+
+        <main>
+            <section class="question-section">
+                <h2><i class="fas fa-question-circle"></i> Your Question</h2>
+                <div class="input-group">
+                    <textarea id="questionInput" placeholder="What is on your mind? Ask about love, career, personal growth, or any area of your life..."></textarea>
+                    <div class="button-group">
+                        <button id="drawCardBtn" class="btn-primary">
+                            <i class="fas fa-star-and-crescent"></i> Draw a Single Card
+                        </button>
+                        <button id="drawThreeBtn" class="btn-secondary">
+                            <i class="fas fa-magic"></i> Three-Card Spread
+                        </button>
+                        <button id="clearBtn" class="btn-outline">
+                            <i class="fas fa-broom"></i> Clear All
+                        </button>
+                    </div>
+                </div>
+                <div class="hint">
+                    <i class="fas fa-lightbulb"></i> Focus on your question while clicking the draw button for more meaningful guidance.
+                </div>
+            </section>
+
+            <section class="cards-section" id="cardsSection">
+                <h2><i class="fas fa-cards"></i> Your Reading</h2>
+                <div class="cards-container" id="cardsContainer">
+                    <div class="placeholder">
+                        <div class="placeholder-icon">
+                            <i class="fas fa-hand-sparkles"></i>
+                        </div>
+                        <p>Your cards will appear here after you draw</p>
+                        <p class="placeholder-sub">Each card comes with a detailed interpretation</p>
+                    </div>
+                </div>
+                <div class="reading-summary" id="readingSummary">
+                    <!-- Summary will be populated by JavaScript -->
+                </div>
+            </section>
+
+            <section class="explanation-section">
+                <h2><i class="fas fa-book-open"></i> Card Meanings & Interpretation</h2>
+                <div class="explanation-container" id="explanationContainer">
+                    <div class="empty-explanation">
+                        <i class="fas fa-feather-alt"></i>
+                        <p>Draw cards to see their meanings and how they relate to your question</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="info-section">
+                <h2><i class="fas fa-info-circle"></i> About Tarot Reading</h2>
+                <div class="info-content">
+                    <div class="info-card">
+                        <i class="fas fa-eye"></i>
+                        <h3>How It Works</h3>
+                        <p>Tarot cards are tools for introspection. The cards you draw reflect energies and possibilities related to your question, not fixed predictions.</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-history"></i>
+                        <h3>Three-Card Spread</h3>
+                        <p>The three-card spread represents Past, Present, and Future, or alternatively Mind, Body, and Spirit, depending on your question's focus.</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-heart"></i>
+                        <h3>Interpretation</h3>
+                        <p>Consider how the card meanings resonate with your situation. The most powerful insights come from your own intuition.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>🔮 This tarot reading is for entertainment and self-reflection purposes only.</p>
+            <p class="footer-links">
+                <a href="#" onclick="showAbout()">About</a> • 
+                <a href="#" onclick="showCardList()">Card Meanings</a> • 
+                <a href="#" onclick="resetApp()">Reset</a>
+            </p>
+            <p class="copyright">© 2023 Mystic Tarot Reader • Made with <i class="fas fa-heart"></i> and intuition</p>
+        </footer>
+    </div>
+
+    <!-- Modal for card details -->
+    <div class="modal" id="cardModal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <div id="modalContent">
+                <!-- Modal content will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
