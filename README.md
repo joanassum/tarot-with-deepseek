@@ -101,6 +101,42 @@ Open `index.html` in your web browser. You can:
 | `PORT` | Port for the backend server | `8081` |
 | `DEEPSEEK_API_URL` | DeepSeek API endpoint | `https://api.deepseek.com/v1/chat/completions` |
 
+## Docker Deployment
+
+The project includes Docker support for easy deployment.
+
+### Using Docker Compose (Recommended)
+
+1. Ensure you have Docker and Docker Compose installed
+2. Set your DeepSeek API key as an environment variable:
+   ```bash
+   export DEEPSEEK_API_KEY=your_api_key_here
+   ```
+3. Build and run the application:
+   ```bash
+   docker-compose up --build
+   ```
+4. Access the application at http://localhost:8080
+
+### Using Docker Directly
+
+1. Build the Docker image:
+   ```bash
+   docker build -t tarot-app .
+   ```
+2. Run the container:
+   ```bash
+   docker run -p 8080:80 -e DEEPSEEK_API_KEY=your_api_key_here tarot-app
+   ```
+3. Access the application at http://localhost:8080
+
+### Environment Variables for Docker
+
+| Variable | Description | Default |
+|----------|-------------|---------|
+| `DEEPSEEK_API_KEY` | Your DeepSeek API key (required) | - |
+| `DEEPSEEK_API_URL` | DeepSeek API endpoint | `https://api.deepseek.com/v1/chat/completions` |
+
 ## Troubleshooting
 
 ### Backend won't start
