@@ -10,6 +10,10 @@ A web application that uses DeepSeek AI to provide tarot card interpretations. T
 - Upright and reversed card meanings
 - Custom question input
 
+## Live Demo
+
+Try the application online: [https://free-ai-tarot.com/](https://free-ai-tarot.com/)
+
 ## Prerequisites
 
 - Go 1.24.4 or later (for backend)
